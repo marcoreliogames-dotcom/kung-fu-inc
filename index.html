@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Kung Fu Inc. — Clean the Machines</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="game-container">
+        <div id="game-wrapper">
+            <canvas id="game-canvas" width="320" height="480"></canvas>
+
+            <!-- Start Screen Overlay -->
+            <div id="start-screen" class="overlay">
+                <div class="logo">
+                    <h1>KUNG FU<br>INC.</h1>
+                    <p class="subtitle">Clean the Machines Uprising</p>
+                </div>
+                <div class="menu-buttons">
+                    <button id="btn-start" class="game-btn">START GAME</button>
+                    <button id="btn-howto" class="game-btn secondary">HOW TO PLAY</button>
+                </div>
+                <div class="high-score-display">
+                    <span class="hs-label">HIGH SCORE</span>
+                    <span id="hs-value" class="hs-value">0</span>
+                </div>
+                <p class="credit">A recreation of the Gamee classic</p>
+            </div>
+
+            <!-- How To Play Screen -->
+            <div id="howto-screen" class="overlay hidden">
+                <h2>HOW TO PLAY</h2>
+                <div class="howto-content">
+                    <div class="howto-item">
+                        <div class="key-icon">← →</div>
+                        <p>Move your fighter left and right</p>
+                    </div>
+                    <div class="howto-item">
+                        <div class="key-icon">↑</div>
+                        <p>Punch / Attack the blocks</p>
+                    </div>
+                    <div class="howto-item">
+                        <div class="key-icon">↓</div>
+                        <p>Kick / Smash downward</p>
+                    </div>
+                    <div class="howto-item">
+                        <div class="key-icon">⎵</div>
+                        <p>Jump</p>
+                    </div>
+                    <div class="howto-rule">
+                        <p>🤖 Cleaning machines fall from the top like Tetris blocks.</p>
+                        <p>👊 Punch and kick them to destroy them before they stack up!</p>
+                        <p>⭐ Clear full rows for bonus points and power-ups!</p>
+                        <p>💀 If the blocks reach the top — game over!</p>
+                    </div>
+                </div>
+                <button id="btn-back" class="game-btn">BACK</button>
+            </div>
+
+            <!-- Game Over Screen -->
+            <div id="gameover-screen" class="overlay hidden">
+                <h2 class="gameover-title">GAME OVER</h2>
+                <div class="final-score">
+                    <span class="score-label">SCORE</span>
+                    <span id="final-score" class="score-value">0</span>
+                </div>
+                <div class="final-score">
+                    <span class="score-label">HIGH SCORE</span>
+                    <span id="final-hs" class="score-value">0</span>
+                </div>
+                <div class="new-record hidden" id="new-record">🏆 NEW RECORD! 🏆</div>
+                <div class="menu-buttons">
+                    <button id="btn-retry" class="game-btn">PLAY AGAIN</button>
+                    <button id="btn-menu" class="game-btn secondary">MAIN MENU</button>
+                </div>
+            </div>
+
+            <!-- Pause Screen -->
+            <div id="pause-screen" class="overlay hidden">
+                <h2>PAUSED</h2>
+                <div class="menu-buttons">
+                    <button id="btn-resume" class="game-btn">RESUME</button>
+                    <button id="btn-quit" class="game-btn secondary">QUIT</button>
+                </div>
+            </div>
+
+            <!-- Mobile Controls -->
+            <div id="mobile-controls">
+                <button id="btn-left" class="mobile-btn">◀</button>
+                <button id="btn-right" class="mobile-btn">▶</button>
+                <button id="btn-punch" class="mobile-btn action-btn">👊</button>
+                <button id="btn-kick" class="mobile-btn action-btn">🦵</button>
+                <button id="btn-jump" class="mobile-btn action-btn">⬆</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/sprites.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/particle.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/enemies.js"></script>
+    <script src="js/tetris.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
